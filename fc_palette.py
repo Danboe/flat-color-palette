@@ -29,6 +29,7 @@ class PalettePanel(Panel):
         layout.operator("mesh.set_color", text="Set Color")
 
 def color_update(self, context):
+    bpy.context.object.palette_selection = self.id
     draw_palette([self.id])
 
 class PaletteColor(bpy.types.PropertyGroup):
